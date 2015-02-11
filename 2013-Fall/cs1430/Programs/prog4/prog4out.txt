@@ -1,0 +1,31 @@
+Enter how many in Parcel Post Table:
+Enter Parcel Post Table (weight & cost) information:
+
+Parcel Post Table in tabular form with 10 entries.
+    Weight        Cost
+    ------        ----
+         5        5.00
+        10        7.50
+        15       10.00
+        20       12.50
+        25       15.00
+        30       17.50
+        35       20.00
+        40       22.50
+        45       25.00
+        50       27.50
+    ------        ----
+
+
+Transaction Number     Weight     Cost/Rejection Message
+               101         20              REJECT - EXCEEDS DIMENSION LIMIT
+               102         13              10.00
+               103         31              REJECT - EXCEEDS LENGTH/GIRTH LIMIT
+               104         18              12.50
+               105         18              12.50
+               106         13              10.00
+               107         58              REJECT - EXCEEDS WEIGHT LIMIT
+
+Number of packages processed is 7
+Number of packages rejected is 3
+Total cost of sending non-rejected packages is $45.00

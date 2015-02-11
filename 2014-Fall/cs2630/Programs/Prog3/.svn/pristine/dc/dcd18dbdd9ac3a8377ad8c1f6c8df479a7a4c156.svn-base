@@ -1,0 +1,27 @@
+#include "stdafx.h"
+#include "VBotChildOne.h"
+
+VBotChildOne::~VBotChildOne()
+{
+
+}
+
+VBotChildOne::VBotChildOne(int x, int y, Panel ^ panel) : VBot(x, y, panel)
+{
+   image = gcnew Drawing::Bitmap("bitmap1.bmp");
+}
+
+void VBotChildOne::Move()
+{
+   x += 30;
+   y += 20;
+   if (x + image->Width > panel->Width)
+      x = 0;
+   if (y + image->Height > panel->Height)
+      y = 0;
+}
+
+int VBotChildOne::EnergyToFightWith()
+{
+   return this->energy;
+}

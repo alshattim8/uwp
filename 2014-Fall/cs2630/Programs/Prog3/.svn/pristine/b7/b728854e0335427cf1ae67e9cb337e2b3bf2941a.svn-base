@@ -1,0 +1,29 @@
+#ifndef VBOT_LIST
+#define VBOT_LIST
+
+#include "VBot.h"
+
+class VBotList
+{
+private:
+   struct Node
+   {
+      Node(VBot * x, Node * nex = NULL) { infoPtr = x;  next = nex; }
+      ~Node() { delete infoPtr; }
+      VBot * infoPtr;
+      Node * next;
+   };
+   Node * list;
+   int numBots;
+
+public:
+   VBotList() { list = NULL; }
+   ~VBotList();
+   bool addBot(VBot * toAdd);
+   void moveAll();
+   void checkBattle();
+   void checkDead();
+
+};
+
+#endif

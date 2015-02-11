@@ -1,0 +1,47 @@
+No one in list, sort not done.
+Alice is seller 1.
+Bob is seller 2.
+
+Sales   Desktop   Laptop   Tablet Handheld  Total  Name
+Amount  Sold      Sold     Sold   Sold      Sold
+------  -------   ------   ------ --------  -----  ----
+     0        0        0        0        0      0  Alice
+     0        0        0        0        0      0  Bob
+
+Cannot output. Charlie is not in the list.
+Cannot update statistics. Charlie is not in the list.
+Charlie is seller 3.
+Charlie sold 5 desktop computers for 20000 Dollars.
+Alice is already in the list.
+Alice sold 5 tablet computers for 20000 Dollars.
+Dave is seller 4.
+Dave sold 2 desktop computers for 4000 Dollars.
+Dave sold 5 tablet computers for 4000 Dollars.
+Dave sold 3 laptop computers for 4000 Dollars.
+Edger is seller 5.
+Alice not added. List is full.
+Alice is already in the list.
+Fred not added. List is full.
+Cannot update statistics. Fred is not in the list.
+Bob sold 3 handheld computers for 7000 Dollars.
+Charlie sold 5 desktop computers for 20000 Dollars.
+Alice sold 4 handheld computers for 5000 Dollars.
+Edger sold 1 handheld computers for 1000 Dollars.
+Alice: $25000; sold 0 desktops 0 laptops 5 tablets 4 handhelds
+Bob: $7000; sold 0 desktops 0 laptops 0 tablets 3 handhelds
+Edger: $1000; sold 0 desktops 0 laptops 0 tablets 1 handhelds
+Charlie: $40000; sold 10 desktops 0 laptops 0 tablets 0 handhelds
+
+Sales   Desktop   Laptop   Tablet Handheld  Total  Name
+Amount  Sold      Sold     Sold   Sold      Sold
+------  -------   ------   ------ --------  -----  ----
+ 40000       10        0        0        0     10  Charlie
+ 12000        2        3        5        0     10  Dave
+ 25000        0        0        5        4      9  Alice
+  7000        0        0        0        3      3  Bob
+  1000        0        0        0        1      1  Edger
+
+Bad command given. Command given was: "bad". Ignoring the rest of the input line.
+The contest is over.  The winners are:
+Charlie: $40000; sold 10 desktops 0 laptops 0 tablets 0 handhelds
+Normal Termination of Program 6!

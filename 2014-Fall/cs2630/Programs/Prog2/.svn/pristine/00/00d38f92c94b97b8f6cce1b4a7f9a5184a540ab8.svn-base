@@ -1,0 +1,22 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+// ADD OPERATOR=
+class Company
+{
+   enum { PHONE_LEN = 10, MAX_NAME_LEN = 30 };
+   friend ostream& operator<<(ostream& out, const Company & toOut);
+   friend istream& operator>>(istream& in,  Company & toIn);
+public:
+   Company();
+   Company(const Company & toCopy);
+   ~Company();
+   Company & operator=(const Company & rhs);
+   bool operator<(const Company & toCompare) const;
+   bool operator==(const Company & toCompare) const;
+   bool operator!=(const Company & toCompare) const;
+private:
+   char *name; // allocate memory (use new) - zero-terminated
+   char phone[PHONE_LEN]; // NOT zero-terminated (be careful!)
+};

@@ -1,0 +1,21 @@
+#include "VBotChildThree.h"
+
+VBotChildThree::~VBotChildThree()
+{
+
+}
+
+VBotChildThree::VBotChildThree()
+{
+
+}
+
+void VBotChildThree::Move()
+{
+
+}
+
+int VBotChildThree::EnergyToFightWith()
+{
+
+}

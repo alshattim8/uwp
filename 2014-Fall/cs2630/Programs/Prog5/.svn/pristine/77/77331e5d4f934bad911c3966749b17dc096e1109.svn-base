@@ -1,0 +1,12 @@
+#include "trial.h"
+
+class MultisetTrial : Trial
+{
+   void Clear();
+
+   void AddElement(int i);
+
+   void RemoveElement();
+
+   void RemoveElement(int i);
+};

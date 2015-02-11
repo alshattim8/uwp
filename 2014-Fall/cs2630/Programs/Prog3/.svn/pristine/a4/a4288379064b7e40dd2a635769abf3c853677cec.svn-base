@@ -1,0 +1,31 @@
+#include "stdafx.h"
+#include "VBotChildThree.h"
+
+VBotChildThree::~VBotChildThree()
+{
+
+}
+
+VBotChildThree::VBotChildThree(int x, int y, Panel ^ panel) : VBot(x, y, panel)
+{
+   image = gcnew Drawing::Bitmap("bitmap3.bmp");
+}
+
+void VBotChildThree::Move()
+{
+   x += 30 + (50 - (energy / 2));
+   y += 20 + (50 - (energy / 2));
+   if (x + image->Width > panel->Width)
+      x = 0;
+   if (y + image->Height > panel->Height)
+      y = 0;
+   if (x < 0)
+      x = panel->Width - image->Width;
+   if (y < 0)
+      y = panel->Height - image->Height;
+}
+
+int VBotChildThree::EnergyToFightWith()
+{
+   return this->energy / 2;
+}

@@ -1,0 +1,23 @@
+#ifndef DIRECTORY_H
+#define DIRECTORY_H
+
+#include "LList.h"
+#include "Company.h"
+#include <iostream>
+using namespace std;
+
+typedef Company InfoType;
+
+class Directory
+{
+private:
+   LList companyList;
+   void InsertCompany();
+   void DeleteCompany();
+   void PrintList();
+   
+public:
+   void Run();
+};
+
+#endif

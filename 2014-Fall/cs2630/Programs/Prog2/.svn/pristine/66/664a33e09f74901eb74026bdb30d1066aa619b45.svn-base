@@ -1,0 +1,57 @@
+#include "Company.h"
+
+Company::Company()
+{
+   name = NULL;
+}
+
+Company::Company(const Company & toCopy)
+{
+   name = new char[MAX_NAME_LEN];
+   int j = 0;
+   while (toCopy.name[j] != '0' && j < MAX_NAME_LEN)
+   {
+      name[j] = toCopy.name[j];
+      j++;
+   }
+   name[j] = '0';
+   for (int i = 0; i < PHONE_LEN; i++)
+   {
+      phone[i] = toCopy.phone[i];
+   }
+}
+
+Company::~Company()
+{
+   delete name;
+}
+
+Company & Company::operator=(const Company & rhs)
+{
+
+}
+
+bool  Company::operator<(const Company & toCompare) const
+{
+
+}
+
+bool  Company::operator==(const Company & toCompare) const
+{
+   
+}
+
+bool  Company::operator!=(const Company & toCompare) const
+{
+
+}
+
+ostream& operator<<(ostream& out, const Company & toOut)
+{
+
+}
+
+istream& operator>>(istream& in, const Company & toIn)
+{
+
+}

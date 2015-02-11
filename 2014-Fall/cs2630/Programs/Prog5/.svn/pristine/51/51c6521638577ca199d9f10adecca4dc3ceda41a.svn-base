@@ -1,0 +1,92 @@
+#include "trial.h"
+#include <deque>
+#include <vector>
+#include <set>
+#include <map>
+#include <list>
+
+class DequeTrial : public Trial
+{
+public:
+   DequeTrial(StringList & s, int num_run, TrialType t) : Trial(s, num_run, t) { d = new deque<string>(); }
+
+   ~DequeTrial() { delete d;  }
+
+   void Clear();
+
+   void AddElement(int i);
+
+   void RemoveElement();
+
+private:
+   deque<string> * d;
+};
+
+class VectorTrial : public Trial
+{
+public:
+   VectorTrial(StringList & s, int num_run, TrialType t) : Trial(s, num_run, t) { v = new vector<string>(); }
+
+   ~VectorTrial() { delete v; }
+
+   void Clear();
+
+   void AddElement(int i);
+
+   void RemoveElement();
+
+private:
+   vector<string> * v;
+};
+
+class MultisetTrial : public Trial
+{
+public:
+   MultisetTrial(StringList & s, int num_run, TrialType t) : Trial(s, num_run, t) { ms = new multiset<string>(); }
+
+   ~MultisetTrial() { delete ms;  }
+
+   void Clear();
+
+   void AddElement(int i);
+
+   void RemoveElement(int i);
+
+private:
+   multiset<string> * ms;
+};
+
+class MultimapTrial : public Trial
+{
+   typedef pair<int, string> Entry;
+public:
+   MultimapTrial(StringList & s, int num_run, TrialType t) : Trial(s, num_run, t) { m = new multimap<int, string>(); }
+
+   ~MultimapTrial() { delete m; }
+
+   void Clear();
+
+   void AddElement(int i);
+
+   void RemoveElement(int i);
+
+private:
+   multimap<int, string> * m;
+};
+
+class ListTrial : public Trial
+{
+public:
+   ListTrial(StringList & s, int num_run, TrialType t) : Trial(s, num_run, t) { l = new list<string>(); }
+
+   ~ListTrial() { delete l;  }
+
+   void Clear();
+
+   void AddElement(int i);
+
+   void RemoveElement();
+
+private:
+   list<string> * l;
+};

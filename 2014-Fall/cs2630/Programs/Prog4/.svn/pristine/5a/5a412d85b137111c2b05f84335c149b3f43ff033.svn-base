@@ -1,0 +1,64 @@
+// You must properly comment, and remove all my "commentary".
+// Remember, comment blocks go on the method in here (the H file).
+
+#pragma once      // This is insetad of the "#ifndef guard"
+
+// Needed for gcroot declaration:  allow use of GC class in non-GC class
+#include <vcclr.h>   
+
+#include <fstream>
+
+using namespace std;
+using namespace System;
+using namespace System::Drawing;
+using namespace System::Windows::Forms;
+
+class Maze
+{
+public:
+
+   // Read in the map.
+   // Set valid accordingly, depending on if the map could be read in okay.
+   Maze(Panel ^ drawingPanel, ifstream & ifs);
+
+   bool IsValid() const { return valid; }
+
+   bool IsFree() const { return free; }
+
+
+   // Set things up and call RecSolve.
+   // This "solves" the maze.
+   // You will need to convert pixel location to 
+   // row and col ( x converts col, y to row ).
+   void Solve(int xPixel, int yPixel);
+
+   void ShowOriginal() { Show(orig); }
+
+   void ShowSolved() { Show(solved); }
+
+
+private:
+
+   static const int CELLSIZE = 16;
+   static const int MAXSIZE = 30;
+
+   static const char OPEN = 'O';
+   static const char DEADEND = '+';
+   static const char EXIT = 'E';
+   static const char START = 'S';
+   static const char VISITED = 'X';
+
+   int width, height;          // Size of maze
+   bool free;
+   bool valid;                   // Is Maze Valid?
+
+   gcroot<Panel ^> panel;        // Panel on which to show the Maze.
+
+   char orig[MAXSIZE][MAXSIZE];    // Original Maze Data
+   char solved[MAXSIZE][MAXSIZE];  // "Solved" Maze Data
+
+   // This MUST be recursive
+   void RecSolve(int row, int col);
+
+   void Show(char cells[][MAXSIZE]);
+};

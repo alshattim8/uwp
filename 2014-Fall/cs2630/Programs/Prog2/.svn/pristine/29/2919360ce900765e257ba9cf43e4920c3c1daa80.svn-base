@@ -1,0 +1,170 @@
+#include "LList.h"
+#include "LeakWatcher.h"
+
+LList::~LList()
+{
+   if (!IsEmpty())
+   {
+      Node * p = list->next;
+      while (p != NULL)
+      {
+         delete list;
+         list = p;
+         p = p->next;
+      }
+      delete list;
+   }
+}
+
+bool LList::IsEmpty() const
+{
+   return list == NULL;
+}
+
+bool LList::Insert(InfoType *x_ptr)
+{
+   if (IsEmpty())
+   {
+      list = new Node(x_ptr, list);
+      return true;
+   }
+   else if (*x_ptr < *list->infoPtr)
+   {
+      list = new Node(x_ptr, list);
+      return true;
+   }
+   else if (*x_ptr == *list->infoPtr)
+   {
+      return false;
+   }
+   else
+   {
+      Node * p = list;
+      while (p->next != NULL && *p->next->infoPtr < *x_ptr)
+      {
+         p = p->next;
+         if (*x_ptr == *p->infoPtr)
+         {
+            return false;
+         }
+      }
+      if (p->next != NULL && *x_ptr == *p->next->infoPtr)
+      {
+         return false;
+      }
+      else
+      {
+         p->next = new Node(x_ptr, p->next);
+         return true;
+      }
+   }
+}
+
+bool LList::Delete(const InfoType & x)
+{
+   if (!IsEmpty())
+   {
+      Node * p = list;
+      Node * q = list;
+      if (x == *p->infoPtr)
+      {
+         list = list->next;
+         delete p;
+         return true;
+      }
+      else
+      {
+         p = p->next;
+         if (p == NULL || p->next == NULL)
+         {
+            return false;
+         }
+
+         Node * q = list;
+         while (p->next != NULL)
+         {
+            if (x == *p->infoPtr)
+            {
+               q->next = p->next;
+               p->next = NULL;
+               delete p;
+               return true;
+            }
+            p = p->next;
+            q = q->next;
+         }
+         if (*p->infoPtr == x)
+         {
+            q->next = p->next;
+            p->next = NULL;
+            delete p;
+            return true;
+         }
+      }
+   }
+   return false;
+}
+
+void LList::Display(ostream & out_stream) const
+{
+   Node * p = list;
+   while (p != NULL)
+   {
+      out_stream << *p->infoPtr << endl;
+      p = p->next;
+   }
+}
+
+#ifdef TESTING_LLIST
+
+// --------------------------------------------------------------------
+// Test bed main
+// --------------------------------------------------------------------
+void main()
+{
+   try
+   {
+      LList list;
+      InfoType * test1 = new InfoType,
+         *test2 = new InfoType,
+         *test3 = new InfoType;
+      InfoType * test4 = new InfoType,
+         *test5 = new InfoType;
+      cout << "input a company" << endl;
+      cin >> *test1;
+      if (list.Insert(test1))
+         list.Display(cout);
+      cout << "input a company" << endl;
+      cin >> *test2;
+      if (list.Insert(test2))
+         list.Display(cout);
+      cin >> *test3;
+      cout << "input a company" << endl;
+      if (list.Insert(test3))
+         list.Display(cout);
+      list.Display(cout);
+      cout << "testing an already existing comp(0)" 
+         << (list.Insert(test2)) << endl;
+      list.Delete(*test2);
+      cin >> *test4;
+      cin >> *test5;
+      if (list.Insert(test4))
+         list.Insert(test5);
+      list.Display(cout);
+      if (!list.Delete(*test3))
+         list.Delete(*test1);
+      list.Display(cout);
+      if (!list.Delete(*test4))
+         list.Delete(*test5);
+      cout << "testing is empty(1)" << (list.IsEmpty()) 
+         << endl;
+   }
+   catch (...)
+   {
+      cout << "Uncaught Exception" << endl;
+   }
+
+   _CrtDumpMemoryLeaks();
+}
+
+#endif   // #ifdef TESTING_LLIST

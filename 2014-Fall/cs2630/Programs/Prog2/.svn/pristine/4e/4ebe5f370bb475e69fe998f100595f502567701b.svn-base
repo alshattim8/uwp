@@ -1,0 +1,44 @@
+// Your comments must indicate that InfoType must have operators:  
+//                      <  ==  !=  =   <<
+// and that the list is maintained as an ordered list using them
+// and that pointers to InfoType are stored in the list.
+// When a pointer is passed to Insert, the object becomes the property
+// of the list - the application must not delete it - this list does.
+// REMOVE THESE COMMENTS -4 IF NOT DONE.
+
+//Don't forget the #ifndef guard
+//You need to include iostream
+
+#ifndef LLIST_H
+#define LLIST_H
+
+#include <iostream>
+#include "Company.h"
+typedef Company InfoType;
+
+class LList
+{
+
+public:
+   LList() { list = NULL; }
+   ~LList();    // delete all the nodes
+   bool IsEmpty() const;
+   bool Insert(InfoType * x_ptr);
+   bool Delete(const InfoType & x);
+   void Display(ostream & out_stream) const;
+
+private:
+   struct Node
+   {
+      Node(InfoType * x, Node * p = NULL) { infoPtr = x;  next = p; }
+      ~Node() { delete infoPtr; }
+      InfoType * infoPtr;
+      Node * next;
+   };
+
+   Node * list;
+   LList(const LList & copyFrom);                 // Don't allow!
+   LList & operator= (const LList & assignFrom);   // Don't allow!
+};
+
+#endif

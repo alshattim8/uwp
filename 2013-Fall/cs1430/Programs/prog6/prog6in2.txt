@@ -1,0 +1,30 @@
+sort
+Add Alice
+Add Bob
+sort
+Output Charlie
+Update Charlie dESKtop  20000 5
+Add Charlie
+Update Charlie dESKtop  20000 5
+Add Alice
+Update Alice tablet 20000 5
+Add Dave
+Update Dave desktop 4000 2
+Update Dave tablet  4000 5
+Update Dave laptop  4000 3
+Add Edger
+Add Alice
+Add Fred
+Update Fred laptop   37000 2
+Update Bob  handheld 7000 3
+Update Charlie  deskTOP 20000 5
+Update Alice handheld  5000 4
+Update Edger  handheld 1000 1
+Output Alice 
+Output Bob
+Output Edger
+Output Charlie
+sort	
+Bad
+Quit
+Do NOT COME HERE

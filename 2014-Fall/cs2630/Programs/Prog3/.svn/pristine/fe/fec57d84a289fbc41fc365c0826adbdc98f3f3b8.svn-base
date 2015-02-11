@@ -1,0 +1,21 @@
+#include "VBotChildTwo.h"
+
+VBotChildTwo::~VBotChildTwo()
+{
+
+}
+
+VBotChildTwo::VBotChildTwo()
+{
+
+}
+
+void VBotChildTwo::Move()
+{
+
+}
+
+int VBotChildTwo::EnergyToFightWith()
+{
+
+}

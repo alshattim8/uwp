@@ -1,0 +1,11 @@
+#pragma once
+
+#include "VBot.h"
+
+class VBotChildThree : public VBot
+{
+public:
+   ~VBotChildThree();
+   void Move();
+   int EnergyToFightWith();
+};

@@ -1,0 +1,82 @@
+#include "stdafx.h"
+#include "VBotList.h"
+
+VBotList::~VBotList()
+{
+   if (list != NULL)
+   {
+      Node * p = list->next;
+      while (p != NULL)
+      {
+         delete list;
+         list = p;
+         p = p->next;
+      }
+      delete list;
+   }
+}
+
+bool VBotList::addBot(VBot * toAdd)
+{
+   list = new Node(toAdd, list);
+}
+
+void VBotList::moveAll()
+{
+   Node * p = list;
+   while (p != NULL)
+   {
+      p->infoPtr->Move();
+   }
+}
+
+void VBotList::checkBattle()
+{
+   if (list != NULL)
+   {
+      for (Node * p = list; p != NULL; p = p->next)
+      {
+         if (p->next != NULL)
+         {
+            for (Node * q = p->next; q != NULL; q = q->next)
+            {
+               if (p->infoPtr->CollidedWith(q->infoPtr))
+               {
+                  p->infoPtr->DoBattleWith(q->infoPtr);
+               }
+            }
+         }
+      }
+   }
+   
+}
+
+void VBotList::checkDead()
+{
+   if (list != NULL)
+   {
+      Node * p = list;
+      while (p->infoPtr->IsDead())
+      {
+         list = list->next;
+         delete p;
+         p = list;
+      }
+      Node * q = p;
+      p = p->next;
+      while (p != NULL)
+      {
+         if (p->infoPtr->IsDead())
+         {
+            q->next = q->next->next;
+            delete p;
+            p = q->next;
+         }
+         else
+         {
+            p = p->next;
+            q = q->next;
+         }
+      }
+   }
+}
