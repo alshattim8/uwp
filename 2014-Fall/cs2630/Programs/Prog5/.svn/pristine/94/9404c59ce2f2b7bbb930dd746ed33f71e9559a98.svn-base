@@ -1,9 +1,0 @@
-// Prog5 class diagram
-[Form1 | +Add Front – Remove Front; +Add Front – Remove Rear; +Add Rear – Remove Front; +Add Rear – Remove Rear;]++1-*>[Trial | +Trial(); +Run(); +~Trial(); | #StringList strings; #Clear(); #AddElement(); #RemoveElement(); #RemoveElement(); | -PrecisionTimer timer; -int numRuns;]
-[Form1 | +Add Front – Remove Front; +Add Front – Remove Rear; +Add Rear – Remove Front; +Add Rear – Remove Rear;]++1-*>[PrecisionTimer | +PrecisionTimer(); +ReStart(); +ElaspedTime(); | –__int64 start_count; –double microseconds_per_count;]
-[Form1 | +Add Front – Remove Front; +Add Front – Remove Rear; +Add Rear – Remove Front; +Add Rear – Remove Rear;]++1-1>[GUI Classes]
-[Form1 | +Add Front – Remove Front; +Add Front – Remove Rear; +Add Rear – Remove Front; +Add Rear – Remove Rear;]uses -.->[multimap]
-[Form1 | +Add Front – Remove Front; +Add Front – Remove Rear; +Add Rear – Remove Front; +Add Rear – Remove Rear;]uses -.->[multiset]
-[Form1 | +Add Front – Remove Front; +Add Front – Remove Rear; +Add Rear – Remove Front; +Add Rear – Remove Rear;]uses -.->[deque]
-[Form1 | +Add Front – Remove Front; +Add Front – Remove Rear; +Add Rear – Remove Front; +Add Rear – Remove Rear;]uses -.->[list]
-[Form1 | +Add Front – Remove Front; +Add Front – Remove Rear; +Add Rear – Remove Front; +Add Rear – Remove Rear;]uses -.->[vector]
