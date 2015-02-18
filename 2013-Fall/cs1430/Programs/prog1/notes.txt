@@ -1,6 +1,0 @@
-cout << "You entered " << radius << " for the vaule of the radius" << endl;
-		cout << "You should have entered a positive value." << endl;
-		
-cout << "You entered <" <<  data << "> for a command" << endl;
-	cout << "You should have entered either diameter, perimeter, or area." << endl;
-	
