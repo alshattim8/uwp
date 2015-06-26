@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C1EEDD6F-762B-4041-9795-5C2A48C47891}</ProjectGuid>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <Keyword>ManagedCProj</Keyword>
+    <RootNamespace>SE333Project</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CLRSupport>Pure</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CLRSupport>Pure</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies />
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>main</EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies />
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>main</EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AddToCartCommand.cpp" />
+    <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="CancelReservationCommand.cpp" />
+    <ClCompile Include="Command.cpp" />
+    <ClCompile Include="Flight.cpp" />
+    <ClCompile Include="FlightController.cpp" />
+    <ClCompile Include="FlightStage.cpp" />
+    <ClCompile Include="Hotel.cpp" />
+    <ClCompile Include="HotelController.cpp" />
+    <ClCompile Include="ReceiptItinerary.cpp" />
+    <ClCompile Include="RemoveFromCartCommand.cpp" />
+    <ClCompile Include="Reservation.cpp" />
+    <ClCompile Include="ReservationCommander.cpp" />
+    <ClCompile Include="ReservationController.cpp" />
+    <ClCompile Include="ReserveOrderCommand.cpp" />
+    <ClCompile Include="Room.cpp" />
+    <ClCompile Include="RoomReservation.cpp" />
+    <ClCompile Include="SE333 Project.cpp" />
+    <ClCompile Include="Seat.cpp" />
+    <ClCompile Include="SeatReservation.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AddToCartCommand.h" />
+    <ClInclude Include="CancelReservation.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="CancelReservationCommand.h" />
+    <ClInclude Include="Command.h" />
+    <ClInclude Include="ConfirmationScreen.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="FlightController.h" />
+    <ClInclude Include="Flight.h" />
+    <ClInclude Include="FlightStage.h" />
+    <ClInclude Include="Hotel.h" />
+    <ClInclude Include="HotelController.h" />
+    <ClInclude Include="ReceiptItinerary.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="RemoveFromCartCommand.h" />
+    <ClInclude Include="ReservationCommander.h" />
+    <ClInclude Include="ReservationController.h" />
+    <ClInclude Include="Reservation.h" />
+    <ClInclude Include="ReservationScreen.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ReserveOrderCommand.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Room.h" />
+    <ClInclude Include="RoomReservation.h" />
+    <ClInclude Include="SearchScreen.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Seat.h" />
+    <ClInclude Include="SeatReservation.h" />
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="app.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="app.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CancelReservation.resx">
+      <DependentUpon>CancelReservation.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfirmationScreen.resx">
+      <DependentUpon>ConfirmationScreen.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReceiptItinerary.resx">
+      <DependentUpon>ReceiptItinerary.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReservationScreen.resx">
+      <DependentUpon>ReservationScreen.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchScreen.resx">
+      <DependentUpon>SearchScreen.h</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

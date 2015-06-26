@@ -1,0 +1,16 @@
+searchPaths ( startLoc, endLoc)
+{
+   if (startLoc == endLoc)
+   {
+      saveCurPath(); // saves the values of the current path that is stored in curPath stack
+   }
+   else
+   {
+      for ( int i = 0; startLoc[i] != null; i++ )
+         curPath.push( startLoc[i] );
+         if ( checkLoop() == false ) // check loop checks for duplicates in the stack
+            searchPaths( startLoc[i], endLoc ); // recursive call
+         curPath.pop();
+   }
+   return;
+}
